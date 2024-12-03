@@ -1,0 +1,632 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,500&display=swap');
+
+:root {
+    --primary-color: #669ccb;
+    --primary-color-dark: #5681a7;
+    --secondary-color: #e8f1fa;
+    --text-dark: #282d31;
+    --text-light: #767268;
+    --extra-light: #f3f4f6;
+
+    --max-width: 1200px;
+
+    font-size: 16px;
+
+  }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+    :root {
+        font-size: calc(16px + 6 * ((100vw - 320px) / 880));
+    }
+}
+
+.journey_grid, .display_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.journey_grid, .display_grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.country_card, .display_card {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 250px;
+    flex: 1 1 250px;
+    margin: 0.5rem;
+}
+
+.transform-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 768px) {
+    .nav_links {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.section_container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+.section_title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.section_subtitle {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    image-rendering: -webkit-optimize-contrast; /* Webkit browser image clarity */
+}
+
+  
+
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+nav {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_logo a {
+    text-decoration: none;
+    color: var(--extra-light);
+    font-size: 1.5rem;
+}
+
+.nav_links {
+    display: none;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+.link {
+    color: var(--extra-light);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.link:hover {
+    color: rgb(62, 39, 39);
+   
+}
+
+header{
+    height: 100vh;
+    background-image: linear-gradient(
+     rgba(45,92,132,.5),
+     rgba(45,92,132,.5)
+    ),
+    url("pics/p7.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header .section_container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    color: var(--extra-light);
+}
+
+.header_content h1{
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 5rem;
+}
+
+.header_content p{
+    text-align: center;
+}
+
+.header_content button{
+    padding: 1rem 2rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--extra-light);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.header_content button:hover {
+    background-color: var(--primary-color-dark);
+
+}
+
+
+.journey_container {
+    background-color: var(--secondary-color);
+}
+
+.journey_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 每行 2 列 */
+    gap: 1rem; /* 网格间距 */
+    justify-content: center; /* 水平居中 */
+}
+
+.country_card {
+    height: 635px; /* 调高卡片整体高度 */
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: var(--extra-light);
+    border-radius: 10px; /* 圆角（可选） */
+}
+
+
+
+.country_card img {
+    width: 100%;
+    height: 85%; /* 图片占 85% */
+    object-fit: cover; /* 确保图片按比例裁剪填充 */
+    display: block;
+}
+
+.country_name {
+    height: 15%; /* 文字区域高度调整为 15% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+
+.country_name i {
+    font-size: 1.2rem;
+}
+
+.country_name span {
+    font-style: italic;
+}
+
+.banner_container {
+    background-image: linear-gradient(rgba(35, 71, 103, 0.5), rgba(35, 71, 103, 0.5)), url("assets/bg-2.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 85vh; /* 修改为 100vh */
+    display: flex;
+    align-items: center; /* 垂直居中内容 */
+    justify-content: center; /* 水平居中内容 */
+}
+
+
+.banner_container .section_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    padding: 0 2rem;
+}
+
+.banner__container .section__container {
+    padding: 10rem 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 默认左对齐 */
+    gap: 1rem;
+    max-width: 600px;
+    color: var(--extra-light);
+}
+
+  
+.banner-content h2 {
+    font-size: 2.5rem; /* 标题略大 */
+    font-weight: bold; /* 加强视觉吸引力 */
+    margin-left: 0;
+}
+
+.banner-content p {
+    font-size: 1rem; /* 正文字体稍小 */
+    line-height: 1.5; /* 提高可读性 */
+    margin-left: 0;
+}
+  
+
+.banner-content button {
+    margin-top: 1rem; /* 给按钮增加间距 */
+    padding: 0.75rem 2.5rem; /* 调整按钮的大小 */
+    font-size: 1rem; /* 保持按钮字体一致 */
+    border: 2px solid var(--secondary-color);
+    background-color: transparent;
+    color: var(--secondary-color);
+    cursor: pointer;
+    align-self: flex-start; /* 按钮左对齐 */
+    margin-left: 0; /* 确保按钮左对齐 */
+}
+
+.banner-content button:hover {
+    background-color: var(--secondary-color); /* 悬停时更改背景颜色 */
+    color: var(--primary-color); /* 悬停时更改文字颜色 */
+}
+
+.display_container {
+    background-color: var(--secondary-color);
+}
+
+.display_container :is(.section_title, .section_subtitle) {
+    color: var(--text-dark);
+}
+
+.display_grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 使用6列，更灵活 */
+    gap: 1rem; /* 方块间距 */
+    align-items: stretch;
+}
+
+.display_card:nth-child(1) {
+    grid-column: span 2; /* 国旗占两列 */
+    grid-row: span 2; /* 可以调整为跨两行 */
+}
+
+.display_card.grid-1 {
+    grid-column: span 2; /* 跨两列 */
+    grid-row: span 2; /* 跨两行 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px; /* 将高度调整为 400px */
+    overflow: hidden; /* 隐藏超出部分 */
+    background-color: var(--extra-light); /* 确保背景与其他区域一致 */
+}
+
+.display_card.grid-1 img {
+    width: 100%; /* 宽度占满父容器 */
+    height: 100%; /* 高度占满父容器 */
+    object-fit: cover; /* 图片裁剪以填满容器 */
+}
+
+.display_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--extra-light);
+    text-align: center;
+    padding: 1rem; /* 内边距 */
+    gap: 0.5rem;
+}
+
+.display_card img {
+    width: 100%;
+    height: 200px; /* 固定高度，避免图片拉伸 */
+    object-fit: cover; /* 确保图片不变形 */
+}
+
+
+.display_card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+
+.display_card h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+
+.display_card p {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+footer {
+    background-color: var(--text-dark);
+    color: var(--secondary-color);
+    padding: 2rem 1rem; /* 增加上下内边距 */
+}
+
+footer .section__container {
+    display: grid;
+    gap: 2rem; /* 增加网格间距 */
+    text-align: center;
+}
+
+footer h4 {
+    font-size: 1.8rem; /* 略微增加标题的字体大小 */
+    font-weight: 600; /* 加粗标题 */
+}
+
+.social__icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem; /* 增加图标间距 */
+}
+
+.social__icons i {
+    padding: 10px; /* 增加图标内边距 */
+    font-size: 1.5rem; /* 调大图标尺寸 */
+    cursor: pointer;
+    border: 1px solid var(--secondary-color); /* 添加边框 */
+    border-radius: 50%; /* 圆形边框 */
+    transition: background-color 0.3s, color 0.3s; /* 添加交互效果 */
+}
+
+.social__icons i:hover {
+    background-color: var(--secondary-color); /* 鼠标悬停时背景色变化 */
+    color: var(--text-dark); /* 鼠标悬停时图标颜色变化 */
+}
+
+footer p {
+    font-style: italic;
+    margin-top: 1rem; /* 增加与顶部内容的间距 */
+    font-size: 1rem; /* 增加段落文字大小 */
+    line-height: 1.5; /* 改善段落的行间距 */
+}
+
+@media (max-width: 480px) {
+    .journey_grid {
+        grid-template-columns: 1fr; /* 改为单列 */
+    }
+    .country_card {
+        width: 100%; /* 占满容器宽度 */
+    }
+}
+
+
+
+@media (min-width: 640px){
+    .nav_links{
+        display: flex;
+    }
+
+    header .section_container{
+        justify-content: flex-start;
+    }
+
+    .header_content {
+        max-width: 400px;
+        align-items: flex-start;
+    }
+
+    .header_content p {
+        text-align: left;
+    }
+
+    .journey_grid {
+        grid-template-columns: repeat(2, 1fr); /* 小屏幕每行 2 列 */
+    }
+
+    .display_grid {
+        grid-template-columns: repeat(3, 1fr); /* 中屏幕三列布局 */
+    }
+
+    .display_card {
+        gap: 0;
+    }
+
+    .display_card i {
+        font-size: 1.75rem;
+    }
+
+    .display_card h4 {
+        font-size: 1rem;
+    }
+
+    .display_card p{
+        font-size: 0.7rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* 整体缩小字体 */
+    }
+
+    header {
+        height: auto; /* 自动适应内容高度 */
+        background-size: contain; /* 显示完整图片 */
+        background-repeat: no-repeat;
+    }
+
+    .header_content h1 {
+        font-size: 2rem; /* 缩小标题 */
+        line-height: 2.5rem;
+        text-align: center; /* 标题居中 */
+    }
+
+    .header_content p {
+        font-size: 0.9rem; /* 缩小段落文字 */
+        text-align: center; /* 居中对齐 */
+    }
+
+    .header_content button {
+        margin: 1rem auto; /* 按钮居中 */
+        display: block;
+        font-size: 1rem;
+    }
+
+    nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0; /* 减少顶部和底部的内边距 */
+        background-color: rgba(0, 0, 0, 0.7); /* 增加背景色以增强对比 */
+        z-index: 1000;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: column; /* 垂直布局 */
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .nav_logo a {
+        font-size: 1.2rem;
+    }
+
+    header {
+        height: auto; /* 根据内容高度自动调整 */
+        background-size: contain; /* 显示完整图片 */
+    }
+
+    .header_content h1 {
+        font-size: 2.5rem; /* 缩小字体 */
+        line-height: 3rem; /* 调整行高 */
+    }
+
+    .header_content p {
+        font-size: 0.9rem; /* 缩小段落文字 */
+    } 
+
+    .section_container {
+        padding: 2rem 1rem; /* 减少内边距 */
+    }
+
+    .journey_grid img {
+        height: auto; /* 取消固定高度 */
+        object-fit: contain; /* 保持图片比例 */
+    }
+
+    .banner-content {
+        align-items: center; /* 小屏幕改为居中对齐 */
+        text-align: center;
+    }
+
+    .banner-content h2 {
+        font-size: 1.5rem; /* 小屏幕进一步缩小标题 */
+    }
+
+    .banner-content p {
+        font-size: 0.9rem; /* 缩小段落文字大小 */
+    }
+
+    .banner-content button {
+        align-self: center; /* 按钮居中 */
+    }
+
+    .display_grid {
+        grid-template-columns: repeat(2, 1fr); /* 小屏幕时 2 列布局 */
+    }
+
+    .display_card {
+        gap: 0.5rem;
+    }
+
+    .display_card i {
+        font-size: 2.5rem;
+    }
+    .display_card p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .display_card {
+      gap: 1rem;
+    }
+
+    .display_grid {
+        grid-template-columns: repeat(4, 1fr); /* 大屏幕四列布局 */
+    }
+  
+    .display_card i {
+        font-size: 3rem; /* 图标尺寸增大 */
+    }
+  
+    .display_card h4 {
+      font-size: 1.5rem;
+    }
+  
+    .display_card p {
+      font-size: 1rem;
+    }
+}
